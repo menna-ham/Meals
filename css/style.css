@@ -1,0 +1,173 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*********sideNav********/
+.sideNav{
+    height: 100vh ;
+    width: fit-content;
+    z-index: 55;
+    inset: 0;
+}
+.white{
+    width: 100px !important;
+    
+}
+.toggle{
+    transition: .3s all;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    -webkit-transition: .3s all;
+    -moz-transition: .3s all;
+    -ms-transition: .3s all;
+    -o-transition: .3s all;
+}
+.toggle:hover{
+    cursor: pointer;
+}
+.sox {
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+.navContent{
+    width: 0;
+    overflow: hidden;
+}
+.navContent li{
+    margin: 3% 0 ;
+    transition: .3s all ;
+    -webkit-transition: .3s all ;
+    -moz-transition: .3s all ;
+    -ms-transition: .3s all ;
+    -o-transition: .3s all ;
+}
+.navContent li:hover{
+    cursor: pointer;
+}
+.copyRights{
+    bottom: 5%;
+}
+.copyRights i { 
+    transition:.3s all ;
+     -webkit-transition:.3s all ;
+      -moz-transition:.3s all ;
+       -ms-transition:.3s all ;
+        -o-transition:.3s all ;
+}
+.copyRights i:hover{
+    cursor: pointer;
+}
+.gray , .copyRights i {
+    color: gray !important;
+}
+.try{
+    width:20%
+}
+
+/*************meals************/
+.lightDarkBG{
+    background-color: rgba(0, 0, 0, .9);
+}
+.myMeal{
+    border: 2px solid rgba(0, 0, 0, 1);
+    border-radius: 10%;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
+    box-shadow: 5px 10px rgba(0, 0, 0, 1);
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+.overlayMeal{
+    position: absolute;
+    /* background-color: red; */
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 10%;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
+    left: 0;
+    right: 0;
+    top: 100%;
+    bottom:0;
+    transition:all .7s ;
+    opacity: 0;
+    -webkit-transition:all .7s ;
+    -moz-transition:all .7s ;
+    -ms-transition:all .7s ;
+    -o-transition:all .7s ;
+}
+.myMeal:hover .overlayMeal {
+    cursor: pointer;
+    top: 0%;
+    bottom: 0;
+    opacity: 1;
+}
+.mealImg img{
+    border-radius: 10%;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
+}
+
+.myArea{
+    transition: .5s all;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -ms-transition: .5s all;
+    -o-transition: .5s all;
+}
+.myArea:hover ,.myIng:hover{
+    cursor: pointer;
+}
+
+.meals{
+    height: 100%;
+}
+.searchSec .row{
+    height: 100%;
+}
+.contactSec{
+    height: 100vh;
+}
+
+input{
+    border: 0;
+}
+
+#submitBtn:hover{
+    background-color: transparent !important;
+    color: #dc3545 !important;
+}
+.serCont{
+    height: 100vh;
+}
+
+
+
+#opening{
+    height: 100%;
+}
+
+.allDets .container{
+
+}
+
