@@ -3,6 +3,7 @@
 export class ContactUs{
     constructor(){
         this.showContact();
+        this.welcome;
 
         this.nameRegex= /^(?=.*?[A-Za-z\s])[A-Za-z+\s]{3,20}$/;
         this.EmailRegex= /^[a-zA-Z0-9@#$%^&-+=()._]+@[A-Za-z0-9.-]+(.com)$/;
@@ -30,93 +31,67 @@ export class ContactUs{
         <h2 class="text-center text-white"> Contact Us </h2>
             <div class="contactSec w-75 h-100 p-3 m-auto d-flex align-items-center justify-content-center">
                 <div class="row my-3 h-100">
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                         <div class="input-group  w-100  m-auto mx-3 mb-4">
-                            <input type="text" id='NameIN' class="shadInput w-100 p-3 rounded-3 m-auto bg-dark text-white border-0" id="exampleFormControlInput1" placeholder="Enter Your Name...">
+                            <input type="text" id='NameIN' class="shadInput w-100 p-3  m-auto " id="exampleFormControlInput1" placeholder="Enter Your Name...">
                             <div id='NameValid' class="alert alert-danger d-none w-100 mt-3" role="alert">
                                 your name should be at least 3 chars
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                         <div class="input-group  w-100  m-auto mx-3 mb-4">
-                            <input type="text" id='EmailIN' class="shadInput w-100 p-3 rounded-3 m-auto bg-dark text-white border-0" id="exampleFormControlInput1" placeholder="Enter Your Email...">
+                            <input type="text" id='EmailIN' class="shadInput w-100 p-3  m-auto " id="exampleFormControlInput1" placeholder="Enter Your Email...">
                             <div id='EmailValid' class="alert alert-danger d-none w-100 mt-3" role="alert">
                                 ex: mail@mail.com
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                         <div class="input-group  w-100  m-auto mx-3 mb-4">
-                            <input type="text"id='PhoneIN' class="shadInput w-100 p-3 rounded-3 m-auto bg-dark text-white border-0" id="exampleFormControlInput1" placeholder="Enter Your Phone...">
+                            <input type="text"id='PhoneIN' class="shadInput w-100 p-3 m-auto " id="exampleFormControlInput1" placeholder="Enter Your Phone...">
                             <div id='phoneValid' class="alert alert-danger d-none w-100 mt-3" role="alert">
                                 Please enter valid phone number
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                         <div class="input-group  w-100  m-auto mx-3 mb-4">
-                            <input type="text" id='AgeIN' class="shadInput w-100 p-3 rounded-3 m-auto bg-dark text-white border-0" id="exampleFormControlInput1" placeholder="Enter Your Age...">
+                            <input type="text" id='AgeIN' class="shadInput w-100 p-3  m-auto " id="exampleFormControlInput1" placeholder="Enter Your Age...">
                             <div id='AgeValid' class="alert alert-danger d-none w-100 mt-3" role="alert">
                                 Please Enter Valid Age
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                         <div class="input-group  w-100  m-auto mx-3 mb-4">
-                            <input type="password" id='PassIN' class="shadInput w-100 p-3 rounded-3 m-auto bg-dark text-white border-0" id="exampleFormControlInput1" placeholder="Enter Your Password...">
+                            <input type="password" id='PassIN' class="shadInput w-100 p-3  m-auto " id="exampleFormControlInput1" placeholder="Enter Your Password...">
                             <div id='PassValid' class="alert alert-danger d-none w-100 mt-3" role="alert">
                             your password should be [8-10] chars and contains atleast uppercase letter , special char , lowercase and number
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                         <div class="input-group  w-100  m-auto mx-3 mb-4">
-                            <input type="password" id='RePassIN' class="shadInput w-100 p-3 rounded-3 m-auto bg-dark text-white border-0" id="exampleFormControlInput1" placeholder="Repeat Password...">
+                            <input type="password" id='RePassIN' class="shadInput w-100 p-3  m-auto " id="exampleFormControlInput1" placeholder="Repeat Password...">
                             <div id='rePassValid' class="alert alert-danger d-none w-100 mt-3" role="alert">
                                 Not matching to your Password
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12  mt-3">
+                    <div class="col-lg-12  mt-3">
                         <div class="input-group   w-50  m-auto mb-4">
                             <a  id='submitBtn' class='btn btn-danger m-auto fs-4 '  data-toggle="modal" data-target="#myModal"> Submit</a>
                         </div>
                     </div>
-
-
-                    <div class="modal" id="myModal">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">Modal Heading</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-
-                            <!-- Modal body -->
-                            <div class="modal-body">
-                                Modal body..
-                            </div>
-
-                            <!-- Modal footer -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                
 
                 </div>
             </div>
         </div>
         `
 
-        document.querySelector('.contactCont').innerHTML = cartona
+        //document.querySelector('.contactCont').innerHTML = cartona
+        document.querySelector('.allContent').innerHTML= cartona;
     }
 
     checkName(){
@@ -297,16 +272,16 @@ export class ContactUs{
         let phoneRegex=/^01[0125][0-9]{8}$/;
         let ageRegex= /^[0-9]{0,2}$/;
         let PassRegex= /(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&-+=()._])[a-zA-Z0-9@#$%^&-+=()._]{8,10}/;
-        //let hi = this.hi
+        
 
-
-        //console.log(this.checkAge);
 
         if( nameRegex.test(name.value) && EmailRegex.test(email.value) && phoneRegex.test(phone.value) && ageRegex.test(age.value) && PassRegex.test(pass.value) && pass.value == repass.value  )
         {
             $('#submitBtn').attr('disabled',false);
             console.log('true from disabled');
-            alert('Thanks for Contacting Us ')
+            this.welcome = this.welcomeCard(name);
+            alert('Thanks for Contacting Us')
+            //this.welcome(name.value)
             //this.welcomeCard(name.value)
         }else{
             console.log('False from disabled');
@@ -316,11 +291,11 @@ export class ContactUs{
 
     }
 
-    // welcomeCard(name){
-    //     let cartona =`
-    //     <h1 class="text-center text-success"> Welcome${name} </h1>
-    //     <p class="text-center text-success fs-3" > Thank for Conracting Us </p>
-    //     `;
-    //     document.querySelector('.welcome').innerHTML= cartona
-    // }
+    welcomeCard(name){
+        let cartona =`
+        <h1 class="text-center text-success"> Welcome${name} </h1>
+        <p class="text-center text-success fs-3" > Thank for Conracting Us </p>
+        `;
+        document.querySelector('.welcome').innerHTML= cartona
+    }
 }

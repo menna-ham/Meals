@@ -8,14 +8,14 @@ $('.toggle').click(()=>{
 
     if( currWidth ==0)
     {
-        $('.navContent').animate({'width':'250'},()=>{
-            $('.navContent ul ').slideDown(1000);
+        $('.navContent').animate({'width':'150%'},()=>{
+            $('.navContent ul li').slideDown(2000);
         });
         $('.toggle').html(`<i class="fa-solid fa-xmark fa-2x"></i>`)
 
     }else{
         $('.navContent').animate({'width':'0'},()=>{
-            // $('.navContent ul ').slideUp(1000);
+            //$('.navContent ul li').slideUp(2000);
 
         });
         $('.toggle').html(`<i class="fa-solid fa-xmark fa-2x"></i>`)
@@ -23,15 +23,15 @@ $('.toggle').click(()=>{
 
 })
 
+$(document).ready(function () {
+
+    $('#loading').remove();
+    $('body').css('overflow',"visible")
+});
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// let SearchBtn =document.getElementById('SearchBtn')
-// if(SearchBtn)
-// {
-//     SearchBtn.addEventListener('click', function(){
-//         getSearch();
-//     })
-// }
+
 
 
 async function getMeals (){
@@ -44,17 +44,7 @@ async function getMeals (){
 getMeals()
 
 
-function getSearch(){
-    $('.openRow').fadeOut(500);
-    $('.FilteredMeal').fadeOut(500);
-    $('.categoryRow').fadeOut(500);
-    $('.filteredAreaMealRow').fadeOut(500);
-    $('.DetailedMeal').fadeOut(500);
-    $('.AreaRow').fadeOut(500);
-    $('.FilteredIngredMeal').fadeOut(500);
 
-    $('.searchSec').show();
-}
 
 
 

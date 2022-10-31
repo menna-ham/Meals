@@ -31,7 +31,7 @@ export class Area {
 
             cartona += `
             
-            <div class='col-md-3'>
+            <div class='col-lg-3 col-md-6'>
                 <div  class="myMeal myArea p-3 filterCat position-relative">
 
                 <div class="mealImg  text-center ">
@@ -47,8 +47,8 @@ export class Area {
             
         }
 
-        document.querySelector('.AreaRow').innerHTML = cartona;
-
+        //document.querySelector('.AreaRow').innerHTML = cartona;
+        document.querySelector('.allContent').innerHTML= cartona;
         allArea= Array.from(document.querySelectorAll('.myArea'));
         this.getselectedArea(allArea);
 
@@ -95,7 +95,7 @@ export class Area {
         for (let i = 0; i < areaMeal.length; i++) {
 
             cartona+= `
-            <div class='col-md-3'>
+            <div class='col-lg-3 col-md-6'>
                 <div  class="myMeal mealOfArea position-relative">
                 <p class='d-none mealId'>${areaMeal[i].idMeal}</p>
 
@@ -117,8 +117,8 @@ export class Area {
         }
       
 
-        document.querySelector('.filteredAreaMealRow').innerHTML= cartona;
-
+        //document.querySelector('.filteredAreaMealRow').innerHTML= cartona;
+        document.querySelector('.allContent').innerHTML= cartona;
         AllselMeal = Array.from(document.querySelectorAll('.mealOfArea'));
         this.sendingIds(AllselMeal)
 

@@ -29,7 +29,7 @@ export class Category {
         for (let i = 0; i < categories.length; i++) {
 
             cartona+= `
-            <div class='col-md-3'>
+            <div class='col-lg-3 col-md-6 p-2'>
                 <div  class="myMeal filterCat position-relative">
 
                 <div class="mealImg ">
@@ -51,7 +51,9 @@ export class Category {
             
         }
 
-        document.querySelector('.categoryRow').innerHTML= cartona;
+        //document.querySelector('.categoryRow').innerHTML= cartona;
+        document.querySelector('.allContent').innerHTML= cartona;
+
 
         allIngCats= Array.from(document.querySelectorAll('.filterCat '));
         this.getNameofIngredients(allIngCats);
@@ -95,7 +97,7 @@ export class Category {
         for (let i = 0; i < allCatMeals.length; i++) {
 
             cartona+= `
-            <div class='col-md-3 my-3 '>
+            <div class='col-lg-3 col-md-6 my-3 p-2'>
                 <div  class="myMeal filterCategory position-relative">
                 <p class='d-none mealId'>${allCatMeals[i].idMeal}</p>
                 
@@ -116,7 +118,8 @@ export class Category {
             
         }
 
-        document.querySelector('.FilteredMeal').innerHTML= cartona;
+        //document.querySelector('.FilteredMeal').innerHTML= cartona;
+        document.querySelector('.allContent').innerHTML= cartona;
         meals= Array.from(document.querySelectorAll('.filterCategory'));
 
         //console.log(meals);

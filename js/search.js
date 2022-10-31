@@ -16,16 +16,19 @@ export class Search {
     }
     showSearch(){
         let cartona= ` 
-         <div class='my-5 p-2 w-75 m-auto h-100 d-flex flex-row justify-content-between '>
-            <div class="input-group  w-100  m-auto mx-3">
-                <input type="text" id='searchName' class="shadInput w-100 p-3 rounded-3 m-auto bg-dark text-white border-0" id="exampleFormControlInput1" placeholder="Search By Name...">
+        <div class='row g-3 '>
+            <div class='col-lg-6 col-md-12 my-md-3 my-sm-3'>
+                    <div class="input-group  w-100  m-auto mx-lg-3 mx-md-5 ms-sm-4">
+                        <input type="text" id='searchName' class="shadInput w-75 p-3  m-auto  text-white " id="exampleFormControlInput1" placeholder="Search By Name...">
+                    </div>
             </div>
-
-            <div class="input-group w-100   m-auto mx-3">
-                <input type="text" id='searchLetter' maxlength="1" class="shadInput w-100 p-3 rounded-3 m-auto bg-dark text-white border-0" id="exampleFormControlInput1" placeholder="Search By FirstLetter...">
-                
+            <div class=' col-lg-6 col-md-12 my-md-3 my-sm-3'>
+                <div class="input-group w-100   m-auto mx-lg-3 mx-md-5 ms-sm-4">
+                    <input type="text" id='searchLetter' maxlength="1" class="shadInput w-75 p-3  m-auto  text-white " id="exampleFormControlInput1" placeholder="Search By FirstLetter...">
+                    
+                </div>
             </div>
-        // </div>
+        </div>
         `;
 
     document.querySelector('#opening').innerHTML= cartona;
@@ -76,7 +79,7 @@ export class Search {
         let cartona ='';
         for (let i = 0; i < resMeal.length; i++) {
            cartona+= `
-           <div class='col-md-3'>
+           <div class='col-lg-3 col-md-6 '>
                 <div  class="myMeal filterCat position-relative">
 
                 <div class="mealImg ">

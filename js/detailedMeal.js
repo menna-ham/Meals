@@ -99,7 +99,8 @@ export class DetailedMeal{
                 </div>
             </div>` ;
         
-        document.querySelector('.DetailedMeal').innerHTML= cartona;
+        //document.querySelector('.DetailedMeal').innerHTML= cartona;
+        document.querySelector('.allContent').innerHTML= cartona;
         // let returnedDets = this.getIngredientsMeasures(details)
         // console.log(returnedDets);
         document.querySelector('.rec').innerHTML=this.getIngredientsMeasures(details) ;

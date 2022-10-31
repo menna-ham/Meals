@@ -26,7 +26,7 @@ export class Ingredients {
         let allIngNames=''
         for (let i = 0; i < cuttedIng.length; i++) {
             cartona+=`
-            <div class='col-md-3 '>
+            <div class='col-lg-3 col-md-6'>
             <div  class="myMeal myIng p-4 filterCat position-relative">
 
             <div class="mealImg  text-center ">
@@ -40,8 +40,8 @@ export class Ingredients {
             `
         }
 
-        document.querySelector('.Ingredients').innerHTML= cartona;
-
+        //document.querySelector('.Ingredients').innerHTML= cartona;
+        document.querySelector('.allContent').innerHTML= cartona;
         allIngNames= Array.from(document.querySelectorAll('.myIng'));
         this.getNameofIngredients(allIngNames);
 
@@ -81,7 +81,7 @@ export class Ingredients {
         for (let i = 0; i < allIngMeals.length; i++) {
 
             cartona+= `
-            <div class='col-md-3 m-3'>
+            <div class='col-lg-3 col-md-6 '>
                 <div  class="myMeal filterIng position-relative">
                 <p class='d-none mealId'>${allIngMeals[i].idMeal}</p>
                 
@@ -102,7 +102,8 @@ export class Ingredients {
             
         }
 
-        document.querySelector('.FilteredIngredMeal').innerHTML= cartona;
+        //document.querySelector('.FilteredIngredMeal').innerHTML= cartona;
+        document.querySelector('.allContent').innerHTML= cartona;
 
         meals= Array.from(document.querySelectorAll('.filterIng'));
 
@@ -132,8 +133,8 @@ export class Ingredients {
     
     details(ID)
     {
-        $('.FilteredIngredMeal').fadeOut(200); 
-        $('.Ingredients').fadeOut(200); 
+        // $('.FilteredIngredMeal').fadeOut(200); 
+        // $('.Ingredients').fadeOut(200); 
 
 
         console.log(ID);

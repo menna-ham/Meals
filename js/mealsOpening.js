@@ -28,7 +28,7 @@ export class OpenMeal{
 
         for (let i = 0; i < meals.length; i++) {
             cartona +=`
-            <div class='col-md-3'>
+            <div class='col-lg-3 col-md-6'>
             <div class="myMeal openMeals position-relative">
             <p class='d-none mealId'>${meals[i].idMeal}</p>
 
@@ -48,7 +48,8 @@ export class OpenMeal{
             `
         }
 
-        document.querySelector('.openRow').innerHTML= cartona;
+        //document.querySelector('.openRow').innerHTML= cartona;
+        document.querySelector('.allContent').innerHTML= cartona;
         allMeals= Array.from(document.querySelectorAll('.openMeals '));
         this.getNameofMeal(allMeals);
 
@@ -81,92 +82,30 @@ export class OpenMeal{
     
 
     getCatData(){
-        $('#opening').fadeOut(500);
-        $('.openRow').fadeOut(500);
-        $('.FilteredMeal').fadeOut(500);
-        $('.AreaRow').fadeOut(500);
-        $('.filteredAreaMealRow').fadeOut(500);
-        $('.DetailedMeal').fadeOut(500);
-        $('.Ingredients').fadeOut(500);
-        $('.FilteredIngredMeal').fadeOut(500);
-        $('.searchSec').fadeOut();
-        $('.categoryRow').fadeIn(500);
-        $('.contactCont').fadeOut(500);
-
-
-
+      
         let categories = new Category();
         categories.getCatData();
     }
 
     getAreaData(){
-        $('#opening').fadeOut(500);
-        $('.openRow').fadeOut(500);
-        $('.FilteredMeal').fadeOut(500);
-        $('.categoryRow').fadeOut(500);
-        $('.filteredAreaMealRow').fadeOut(500);
-        $('.DetailedMeal').fadeOut(500);
-        $('.Ingredients').fadeOut(500);
-        $('.FilteredIngredMeal').fadeOut(500);
-        $('.searchSec').fadeOut();
-        $('.contactCont').fadeOut(500);
-
-
-        $('.AreaRow').fadeIn(500);
-
+  
         let area = new Area();
         area.getAreaData();
 
     }
     getIngredientsData(){
-        $('#opening').fadeOut(500);
-        $('.openRow').fadeOut(500);
-        $('.FilteredMeal').fadeOut(500);
-        $('.categoryRow').fadeOut(500);
-        $('.filteredAreaMealRow').fadeOut(500);
-        $('.DetailedMeal').fadeOut(500);
-        $('.AreaRow').fadeOut(500);
-        $('.FilteredIngredMeal').fadeOut(500);
-        $('.contactCont').fadeOut(500);
-        $('.searchSec').fadeOut();
-
-
-        $('.Ingredients').fadeIn(500);
 
         let ing = new Ingredients();
         ing.getIngredientsData();
     }
 
     getSearchFunc(){
-    $('.openRow').fadeOut(500);
-    $('.FilteredMeal').fadeOut(500);
-    $('.categoryRow').fadeOut(500);
-    $('.filteredAreaMealRow').fadeOut(500);
-    $('.DetailedMeal').fadeOut(500);
-    $('.AreaRow').fadeOut(500);
-    $('.Ingredients').fadeOut(500);
-    $('.FilteredIngredMeal').fadeOut(500);
-    $('.contactCont').fadeOut(500);
-
-   // $('.searchSec').fadeIn(500);
-   $('#opening').fadeIn(500);
 
     let search = new Search();
     }
 
     getContactData(){
-        $('#opening').fadeOut(500);
-        $('.openRow').fadeOut(500);
-        $('.FilteredMeal').fadeOut(500);
-        $('.categoryRow').fadeOut(500);
-        $('.filteredAreaMealRow').fadeOut(500);
-        $('.DetailedMeal').fadeOut(500);
-        $('.AreaRow').fadeOut(500);
-        $('.Ingredients').fadeOut(500);
-        $('.FilteredIngredMeal').fadeOut(500);
-        $('.searchSec').fadeOut(500);
 
-        $('.contactCont').fadeIn(500);
         let contact = new ContactUs();
 
     }
