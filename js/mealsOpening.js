@@ -100,6 +100,18 @@ export class OpenMeal{
     }
 
     getSearchFunc(){
+    $('.openRow').fadeOut(500);
+    $('.FilteredMeal').fadeOut(500);
+    $('.categoryRow').fadeOut(500);
+    $('.filteredAreaMealRow').fadeOut(500);
+    $('.DetailedMeal').fadeOut(500);
+    $('.AreaRow').fadeOut(500);
+    $('.Ingredients').fadeOut(500);
+    $('.FilteredIngredMeal').fadeOut(500);
+    $('.contactCont').fadeOut(500);
+
+    $('.searchSec').fadeIn(500);
+   $('#opening').fadeIn(500);
 
     let search = new Search();
     }
