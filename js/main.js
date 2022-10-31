@@ -18,7 +18,7 @@ $('.toggle').click(()=>{
             //$('.navContent ul li').slideUp(2000);
 
         });
-        $('.toggle').html(`<i class="fa-solid fa-xmark fa-2x"></i>`)
+        $('.toggle').html(`<i class="fa-solid fa-bars fa-2x"></i>`)
     }
 
 })
