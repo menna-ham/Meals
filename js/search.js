@@ -31,7 +31,7 @@ export class Search {
         </div>
         `;
 
-    document.querySelector('#opening').innerHTML= cartona;
+    document.querySelector('.allContent').innerHTML= cartona;
     }
 
     async searchWithName(serNameVal){
