@@ -96,7 +96,7 @@ export class Area {
 
             cartona+= `
             <div class='col-lg-3 col-md-6'>
-                <div  class="myMeal mealOfArea position-relative">
+                <div  class="myMeal mealOfArea position-relative overflow-hidden">
                 <p class='d-none mealId'>${areaMeal[i].idMeal}</p>
 
                 <div class="mealImg ">

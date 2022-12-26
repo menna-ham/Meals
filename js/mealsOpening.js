@@ -27,25 +27,25 @@ export class OpenMeal{
         let allMeals;
 
         for (let i = 0; i < meals.length; i++) {
-            cartona +=`
+            cartona += `
             <div class='col-lg-3 col-md-6'>
-            <div class="myMeal openMeals position-relative">
-            <p class='d-none mealId'>${meals[i].idMeal}</p>
+            <div class="myMeal openMeals position-relative overflow-hidden">
+                    <p class='d-none mealId'>${meals[i].idMeal}</p>
 
-            <div class="mealImg ">
-                <img src="${meals[i].strMealThumb}" class="img-fluid">
+                    <div class="mealImg ">
+                        <img src="${meals[i].strMealThumb}" class="img-fluid">
+                    </div>
+                    
+                    <div class="overlayMeal d-flex align-items-center">
+                        <div class="mx-auto">
+                        <h4>${meals[i].strMeal}</h4> 
+                        </div>
+                    </div>
+
+            </div>
             </div>
             
-            <div class="overlayMeal d-flex align-items-center">
-                <div class="mx-auto">
-                <h4>${meals[i].strMeal}</h4> 
-                </div>
-            </div>
-
-            </div>
-            </div>
-            
-            `
+            `;
         }
 
         //document.querySelector('.openRow').innerHTML= cartona;

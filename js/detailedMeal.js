@@ -14,53 +14,31 @@ export class DetailedMeal{
         let details = data.meals[0];
         //console.log(details); 
         this.displayDetails(details)
-        this.getIngredientsMeasures(details);  
     }
 
-    getIngredientsMeasures(details)
-    {
-        let ingredientsArr= [];
-        let measuresArr=[];
-        let cartona='';
-
-        for (const key in details) {
-
-            if(key.includes('strIngredient'))
-            {
-                ingredientsArr.push(details[key]);
-            }else if(key.includes('strMeasure')){
-                measuresArr.push(details[key])
-            }
-            
-        }
-
-        measuresArr.forEach(function(item, index){
-
-            if(item !=''||ingredientsArr[index]!='')
-            {
-                cartona += `<span class="badge bg-secondary fs-5 m-2" > ${item} ${ingredientsArr[index]}</span> `;
-
-            }else if(item=='' && ingredientsArr[index]==''){
-                cartona+=''
-            }else if(item==null || ingredientsArr[index]==null){
-                cartona+=''
-            }else{
-                cartona+=''
-            }
-
-        });
-        console.log(cartona);
-        return cartona;
-    }
 
     displayDetails(details)
     {
-        // $('.filteredAreaMealRow').fadeOut(500); 
-        // $('.categoryRow').fadeOut(500); 
-        // $('.FilteredMeal').fadeOut(500); 
-        // $('.AreaRow').fadeOut(500); 
 
+        console.log(details);
         $('.DetailedMeal').fadeIn(500);
+
+        let ing = ` `;
+        for (let i = 0; i < 20; i++) {
+            
+            if(details[`strIngredient${i}`])
+            {
+                ing += ` <span class="badge bg-secondary fs-5 m-2" > ${details[`strMeasure${i}`]} ${details[`strIngredient${i}`]}</span>`
+            }
+            
+        }
+        let tags = details.strTags.split(",");
+        if(!tags)tags=[];
+        let strTag = ``;
+
+        for( let i=0 ; i<tags.length ; i++){
+            strTag+= ` <p> <span class="badge bg-secondary fs-5">${tags[i]}</span></p>`
+        }
 
         let cartona = `        
             <div class="col-md-4">
@@ -82,13 +60,14 @@ export class DetailedMeal{
                     <div class="Recipes my-2 ">
                     <h4 class='text-white'> Recipes:</h4>
                     <div class='rec'>
-                    
+                    ${ing}
                     </div>
                       
                     </div>
                     <div class="tags my-2">
-                        
-                        ${details.strTags!=null || details.strTags!='' ? `<span  class="text-white fw-bold fs-5 mx-2">Tag:</span> <p> <span class="badge bg-secondary fs-5">${details.strTags}</span></p>`:'<p></p>'}
+                    <span  class="text-white fw-bold fs-5 mx-2">Tag:</span>
+                    
+                    ${strTag}
                         
                     </div>
                     <div class="Links my-2">
@@ -98,12 +77,9 @@ export class DetailedMeal{
 
                 </div>
             </div>` ;
-        
-        //document.querySelector('.DetailedMeal').innerHTML= cartona;
+
         document.querySelector('.allContent').innerHTML= cartona;
-        // let returnedDets = this.getIngredientsMeasures(details)
-        // console.log(returnedDets);
-        document.querySelector('.rec').innerHTML=this.getIngredientsMeasures(details) ;
+
     }
 
 

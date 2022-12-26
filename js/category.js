@@ -30,17 +30,17 @@ export class Category {
 
             cartona+= `
             <div class='col-lg-3 col-md-6 p-2'>
-                <div  class="myMeal filterCat position-relative">
+                <div  class="myMeal filterCat position-relative overflow-hidden">
 
-                <div class="mealImg ">
-                    <img src="${categories[i].strCategoryThumb}" class="img-fluid">
-                </div>
-                
-                <div  id='FilterCat' class="overlayMeal  d-flex align-items-center">
-                    <div class="mx-auto">
-                    <h4 class='catName' >${categories[i].strCategory}</h4> 
-                    </div>
-                </div>
+                        <div class="mealImg ">
+                            <img src="${categories[i].strCategoryThumb}" class="img-fluid">
+                        </div>
+                        
+                        <div  id='FilterCat' class="overlayMeal  d-flex align-items-center">
+                            <div class="mx-auto">
+                            <h4 class='catName' >${categories[i].strCategory}</h4> 
+                            </div>
+                        </div>
 
                 </div>
             </div>
@@ -98,7 +98,7 @@ export class Category {
 
             cartona+= `
             <div class='col-lg-3 col-md-6 my-3 p-2'>
-                <div  class="myMeal filterCategory position-relative">
+                <div  class="myMeal filterCategory position-relative overflow-hidden">
                 <p class='d-none mealId'>${allCatMeals[i].idMeal}</p>
                 
                 <div class="mealImg ">

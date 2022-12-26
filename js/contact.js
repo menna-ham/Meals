@@ -33,7 +33,7 @@ export class ContactUs{
                 <div class="row my-3 h-100">
                     <div class="col-lg-6">
                         <div class="input-group  w-100  m-auto mx-3 mb-4">
-                            <input type="text" id='NameIN' class="shadInput w-100 p-3  m-auto " id="exampleFormControlInput1" placeholder="Enter Your Name...">
+                            <input type="text" onkeyup="${()=>{this.disabledBtn()}}" id='NameIN' class="shadInput w-100 p-3  m-auto " id="exampleFormControlInput1" placeholder="Enter Your Name...">
                             <div id='NameValid' class="alert alert-danger d-none w-100 mt-3" role="alert">
                                 your name should be at least 3 chars
                             </div>
@@ -41,7 +41,7 @@ export class ContactUs{
                     </div>
                     <div class="col-lg-6">
                         <div class="input-group  w-100  m-auto mx-3 mb-4">
-                            <input type="text" id='EmailIN' class="shadInput w-100 p-3  m-auto " id="exampleFormControlInput1" placeholder="Enter Your Email...">
+                            <input type="text" onkeyup="${()=>{this.disabledBtn()}}" id='EmailIN' class="shadInput w-100 p-3  m-auto " id="exampleFormControlInput1" placeholder="Enter Your Email...">
                             <div id='EmailValid' class="alert alert-danger d-none w-100 mt-3" role="alert">
                                 ex: mail@mail.com
                             </div>
@@ -49,7 +49,7 @@ export class ContactUs{
                     </div>
                     <div class="col-lg-6">
                         <div class="input-group  w-100  m-auto mx-3 mb-4">
-                            <input type="text"id='PhoneIN' class="shadInput w-100 p-3 m-auto " id="exampleFormControlInput1" placeholder="Enter Your Phone...">
+                            <input type="text" onkeyup="${()=>{this.disabledBtn()}}" id='PhoneIN' class="shadInput w-100 p-3 m-auto " id="exampleFormControlInput1" placeholder="Enter Your Phone...">
                             <div id='phoneValid' class="alert alert-danger d-none w-100 mt-3" role="alert">
                                 Please enter valid phone number
                             </div>
@@ -57,7 +57,7 @@ export class ContactUs{
                     </div>
                     <div class="col-lg-6">
                         <div class="input-group  w-100  m-auto mx-3 mb-4">
-                            <input type="text" id='AgeIN' class="shadInput w-100 p-3  m-auto " id="exampleFormControlInput1" placeholder="Enter Your Age...">
+                            <input type="text" onkeyup="${()=>{this.disabledBtn()}}" id='AgeIN' class="shadInput w-100 p-3  m-auto " id="exampleFormControlInput1" placeholder="Enter Your Age...">
                             <div id='AgeValid' class="alert alert-danger d-none w-100 mt-3" role="alert">
                                 Please Enter Valid Age
                             </div>
@@ -65,7 +65,7 @@ export class ContactUs{
                     </div>
                     <div class="col-lg-6">
                         <div class="input-group  w-100  m-auto mx-3 mb-4">
-                            <input type="password" id='PassIN' class="shadInput w-100 p-3  m-auto " id="exampleFormControlInput1" placeholder="Enter Your Password...">
+                            <input type="password" onkeyup="${()=>{this.disabledBtn()}}" id='PassIN' class="shadInput w-100 p-3  m-auto " id="exampleFormControlInput1" placeholder="Enter Your Password...">
                             <div id='PassValid' class="alert alert-danger d-none w-100 mt-3" role="alert">
                             your password should be [8-10] chars and contains atleast uppercase letter , special char , lowercase and number
                             </div>
@@ -73,7 +73,7 @@ export class ContactUs{
                     </div>
                     <div class="col-lg-6">
                         <div class="input-group  w-100  m-auto mx-3 mb-4">
-                            <input type="password" id='RePassIN' class="shadInput w-100 p-3  m-auto " id="exampleFormControlInput1" placeholder="Repeat Password...">
+                            <input type="password" onkeyup="${()=>{this.disabledBtn()}}" id='RePassIN' class="shadInput w-100 p-3  m-auto " id="exampleFormControlInput1" placeholder="Repeat Password...">
                             <div id='rePassValid' class="alert alert-danger d-none w-100 mt-3" role="alert">
                                 Not matching to your Password
                             </div>
@@ -81,16 +81,15 @@ export class ContactUs{
                     </div>
                     <div class="col-lg-12  mt-3">
                         <div class="input-group   w-50  m-auto mb-4">
-                            <a  id='submitBtn' class='btn btn-danger m-auto fs-4 '  data-toggle="modal" data-target="#myModal"> Submit</a>
+                            <button  id='submitBtn'  class='btn btn-danger m-auto fs-4 '> Submit</button>
                         </div>
                     </div>
-
+                    <p id='again' class=' alert alert-danger fs-3 text-center d-none'> please try again  </p>
+                    <p id='thanks' class=' alert alert-success fs-3 text-center d-none'> </p>
                 </div>
             </div>
         </div>
         `
-
-        //document.querySelector('.contactCont').innerHTML = cartona
         document.querySelector('.allContent').innerHTML= cartona;
     }
 
@@ -212,7 +211,7 @@ export class ContactUs{
             pass.classList.add('is-valid')
             pass.classList.remove('is-invalid')
 
-            console.log('true');
+            console.log('true pass');
             return(true);
 
         }else{
@@ -220,7 +219,7 @@ export class ContactUs{
             valid.classList.add('d-block');
             pass.classList.add('is-invalid')
             pass.classList.remove('is-valid');
-            console.log('false');
+            console.log('false pass');
             return(false);
 
 
@@ -265,7 +264,8 @@ export class ContactUs{
         let pass= document.getElementById('PassIN');
         let repass = document.getElementById('RePassIN');
 
-
+        let again= document.getElementById('again');
+        let thanks = document.getElementById('thanks');
 
         let nameRegex= /^(?=.*?[A-Za-z\s])[A-Za-z+\s]{3,20}$/;
         let EmailRegex= /^[a-zA-Z0-9@#$%^&-+=()._]+@[A-Za-z0-9.-]+(.com)$/;
@@ -274,28 +274,25 @@ export class ContactUs{
         let PassRegex= /(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&-+=()._])[a-zA-Z0-9@#$%^&-+=()._]{8,10}/;
         
 
-
+// if(this.checkName()&& this.checkAge() && this.checkEmail() && this.checkPass() && this.checkPhone() && this.checkRepass())
         if( nameRegex.test(name.value) && EmailRegex.test(email.value) && phoneRegex.test(phone.value) && ageRegex.test(age.value) && PassRegex.test(pass.value) && pass.value == repass.value  )
         {
-            $('#submitBtn').attr('disabled',false);
+            document.getElementById('submitBtn').removeAttribute('disabled')
             console.log('true from disabled');
-            this.welcome = this.welcomeCard(name);
-            alert('Thanks for Contacting Us')
-            //this.welcome(name.value)
-            //this.welcomeCard(name.value)
+            again.classList.remove('d-block')
+            again.classList.add('d-none')
+            thanks.classList.remove('d-none')
+            thanks.innerHTML = `Thanks for contacting us ${name.value}`
+            // this.welcomeCard(name.value)
         }else{
             console.log('False from disabled');
-            $('#submitBtn').attr('disabled',true)
+            console.log(again + thanks);
+            again.classList.remove('d-none')
+            again.classList.add('d-block')
+            thanks.classList.add('d-none')
+
             
         }
 
-    }
-
-    welcomeCard(name){
-        let cartona =`
-        <h1 class="text-center text-success"> Welcome${name} </h1>
-        <p class="text-center text-success fs-3" > Thank for Conracting Us </p>
-        `;
-        document.querySelector('.welcome').innerHTML= cartona
     }
 }
