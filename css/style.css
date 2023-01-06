@@ -89,6 +89,7 @@
     -moz-border-radius: 10%;
     -ms-border-radius: 10%;
     -o-border-radius: 10%;
+    overflow: hidden;
     box-shadow: 5px 10px rgba(0,0,0,.15);
     transition: all .5s;
     -webkit-transition: all .5s;
